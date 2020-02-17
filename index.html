@@ -19,6 +19,21 @@
       min-height: 100%;
     }
     </style>
+    <script type="text/javascript">
+      function GetQueryString(name)
+      {
+          var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+          var r = window.location.search.substr(1).match(reg);
+          if(r!=null)return unescape(r[2]); return null;
+      }
+      window.onload = function(){
+        var myv=GetQueryString("version");
+        if(myv !=null && myv.toString().length>1)
+        {
+            document.getElementById('version').innerHTML = myv;
+        }
+		  }
+    </script>
   </head>
   <body>
     <div class="align-justify">
@@ -27,10 +42,10 @@
       </div>
       <div class="align-center">
         <h1>iOS 皮皮搞笑-ih</h1>
-        <h2 style="color:darkGray">2.1.5.106</h2>
+        <h2 style="color:darkGray" id="version"></h2>
       </div>
       <div class="align-center">
-        <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/itechblue/PPInhouse/master/manifest.plist"><font size="18">点击下载</font></a>
+        <a href="itms-services://?action=download-manifest&url=https://livefile.ippzone.net/ppinhouse/manifest.plist"><font size="18">点击下载</font></a>
         <br/><br/>
         <a href="https://ali-static.fir.im/embedded.mobileprovision"><font size="18">立即信任</font></a>
         <br/>
